@@ -98,6 +98,7 @@
             android:textColor="@android:color/black"
             android:textSize="18sp" />
         <com.xiangxue.alvin.flowlayout.FlowLayout
+            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp">
@@ -193,6 +194,12 @@
                 android:background="@drawable/shape_button_circular"
                 android:text="笔记本电脑" />
         </com.xiangxue.alvin.flowlayout.FlowLayout>
+
+        <com.xiangxue.alvin.flowlayout.MyFlowLayout
+            android:id="@+id/flowLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"/>
     </LinearLayout>
 
 </ScrollView>
