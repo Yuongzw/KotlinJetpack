@@ -1,2 +1,2 @@
-include ':app', ':flowLayout'
+include ':app', ':flowLayout', ':network', ':base'
 rootProject.name='KotlinJetpack'
