@@ -25,7 +25,11 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation rootProject.ext.support["kotlin-stdlib"]
-    implementation rootProject.ext.dependencies["retrofit"]
+    implementation rootProject.ext.support["recyclerview"]
+    implementation rootProject.ext.support["constraint-layout"]
+    implementation rootProject.ext.support["viewmodel"]
+    implementation rootProject.ext.support["extensions"]
+    implementation project(':base')
+    implementation project(':network')
     testImplementation 'junit:junit:4.12'
 }
