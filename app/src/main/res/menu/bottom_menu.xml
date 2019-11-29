@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/item_news"
+        android:icon="@drawable/ic_news"
+        android:title="新闻" />
+    <item
+        android:id="@+id/item_nba"
+        android:icon="@drawable/ic_nba"
+        android:title="NBA" />
+    <item
+        android:id="@+id/item_joke"
+        android:icon="@drawable/ic_joke"
+        android:title="笑话" />
+    <item
+        android:id="@+id/item_express"
+        android:icon="@drawable/ic_express"
+        android:title="快递" />
+</menu>
