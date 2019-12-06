@@ -14,4 +14,6 @@
     <string name="menu_tools">Tools</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
+    <string name="team_visitor">(客)</string>
+    <string name="team_host">(主)</string>
 </resources>

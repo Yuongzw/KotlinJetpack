@@ -32,6 +32,9 @@ dependencies {
     api rootProject.ext.support["kotlin-stdlib"]
     api rootProject.ext.support["appcompat"]
     api rootProject.ext.support["androidx-core"]
+    api rootProject.ext.support["kotlinx-coroutines-core"]
+    api rootProject.ext.support["kotlinx-coroutines"]
+    api rootProject.ext.support["viewmodel"]
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'

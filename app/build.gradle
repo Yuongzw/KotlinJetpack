@@ -4,6 +4,8 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'kotlin-kapt'
+
 android {
     compileSdkVersion rootProject.ext.android.compileSdkVersion
     buildToolsVersion rootProject.ext.android.buildToolsVersion
@@ -14,6 +16,12 @@ android {
         versionCode rootProject.ext.android.versionCode
         versionName rootProject.ext.android.versionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        kapt {
+            arguments {
+                arg("AROUTER_MODULE_NAME", project.getName())
+            }
+        }
     }
     buildTypes {
         release {
@@ -31,11 +39,13 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation rootProject.ext.support["recyclerview"]
     implementation rootProject.ext.support["constraint-layout"]
-    implementation rootProject.ext.support["viewmodel"]
     implementation rootProject.ext.support["extensions"]
     implementation rootProject.ext.support["design"]
+    implementation rootProject.ext.support["cardview"]
     implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.5.1'
     implementation rootProject.ext.dependencies["BaseRecyclerViewAdapterHelper"]
+    implementation rootProject.ext.dependencies["glide"]
+    kapt rootProject.ext.dependencies["glide-compiler"]
     implementation project(':base')
     implementation project(':network')
     testImplementation 'junit:junit:4.12'

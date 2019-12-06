@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.example.network.bean.Teammatch" />
+
+        <variable
+            name="teammatchBean"
+            type="Teammatch" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_10"
+        app:cardBackgroundColor="@color/blue2"
+        app:contentPadding="@dimen/dp_5"
+        app:cardCornerRadius="@dimen/dp_5"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{teammatchBean.name}"/>
+
+
+    </androidx.cardview.widget.CardView>
+</layout>

@@ -1,17 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         android:gravity="center"
-        android:orientation="vertical">
+        tools:ignore="MissingConstraints">
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:visibility="gone"
+            android:id="@+id/switch_btn_id"
+            >
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/rb_Today"
+                android:text="今天赛事"
+                android:textColor="@drawable/radio_button_text"
+                android:background="@drawable/radio_button_left"
+                android:button="@null"
+                android:padding="8dp"
+                android:checked="true"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/rb_Tomorrow"
+                android:text="明天赛事"
+                android:textColor="@drawable/radio_button_text"
+                android:background="@drawable/radio_button_center"
+                android:button="@null"
+                android:padding="8dp"/>
+
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/rb_Schedule"
+                android:text="各队赛程"
+                android:textColor="@drawable/radio_button_text"
+                android:background="@drawable/radio_button_right"
+                android:button="@null"
+                android:padding="8dp"/>
+
+        </RadioGroup>
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/nba_ViewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"/>
+
+        <ProgressBar
+            android:id="@+id/nba_ProgressBar"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:visibility="gone"
+            android:layout_gravity="center"/>
 
         <TextView
+            android:id="@+id/nba_LoadError"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="NBA"/>
+            android:text="加载失败，点击重试！"
+            android:visibility="gone"
+            />
+
+        <TextView
+            android:id="@+id/nba_NoData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="暂无数据！"
+            android:visibility="gone"
+            />
 
     </LinearLayout>
 </layout>
