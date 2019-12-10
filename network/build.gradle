@@ -30,6 +30,7 @@ dependencies {
     implementation rootProject.ext.dependencies["retrofit-converter"]
     implementation rootProject.ext.dependencies["converter-scalars"]
     implementation rootProject.ext.dependencies["coroutines-adapter"]
+    api rootProject.ext.dependencies["BaseRecyclerViewAdapterHelper"]
     implementation rootProject.ext.dependencies["okhttp3"]
     implementation rootProject.ext.support["kotlin-stdlib"]
     implementation project(':base')

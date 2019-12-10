@@ -43,7 +43,6 @@ dependencies {
     implementation rootProject.ext.support["design"]
     implementation rootProject.ext.support["cardview"]
     implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.5.1'
-    implementation rootProject.ext.dependencies["BaseRecyclerViewAdapterHelper"]
     implementation rootProject.ext.dependencies["glide"]
     kapt rootProject.ext.dependencies["glide-compiler"]
     implementation project(':base')
