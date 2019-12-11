@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="com.example.network.bean.JokesData.ResultBean"/>
+        <variable
+            name="jokeResult"
+            type="ResultBean" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
+
+
+
+        <ImageView
+            android:id="@+id/welfare_ImageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            imageUrl="@{jokeResult.url}"
+            android:transitionName="image"
+             />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp_5"
+            android:text="@{jokeResult.content}"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:textColor="@color/white1"
+            android:background="#6F000000"
+            android:textSize="@dimen/sp_16"
+            android:visibility="gone"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp_5"
+            android:background="#6F000000"
+            android:gravity="center"
+            android:textColor="@color/white1"
+            app:layout_constraintBottom_toBottomOf="@+id/welfare_ImageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:visibility="gone"
+            android:text="@{jokeResult.updatetime}"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

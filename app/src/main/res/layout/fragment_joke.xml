@@ -7,11 +7,50 @@
         android:gravity="center"
         android:orientation="vertical">
 
-        <TextView
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:id="@+id/joke_SmartRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/orange"
+            android:visibility="gone">
+
+            <com.scwang.smartrefresh.layout.header.ClassicsHeader
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/joke_RecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+        <ProgressBar
+            android:id="@+id/joke_ProgressBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="笑话"/>
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/joke_LoadError"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="加载失败，点击重试！"
+            android:visibility="gone"
+            />
+
+        <TextView
+            android:id="@+id/joke_NoData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="暂无数据！"
+            android:visibility="gone"
+            />
+
 
     </LinearLayout>
 </layout>
