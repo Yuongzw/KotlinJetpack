@@ -1,10 +1,10 @@
 package com.xiangxue.alvin.flowlayout;
 
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,16 +17,17 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        flowLayout = findViewById(R.id.flowLayout);
-        initDatas();
-        flowLayout.setDatas(datas);
-        flowLayout.setTagClickListener(new MyFlowLayout.OnTagClickListener() {
-            @Override
-            public void onTagClick(String text) {
-                Toast.makeText(MainActivity.this, text, Toast.LENGTH_SHORT).show();
-            }
-        });
+        setContentView(R.layout.activity_main2);
+//        setContentView(new SplitView(this));
+//        flowLayout = findViewById(R.id.flowLayout);
+//        initDatas();
+//        flowLayout.setDatas(datas);
+//        flowLayout.setTagClickListener(new MyFlowLayout.OnTagClickListener() {
+//            @Override
+//            public void onTagClick(String text) {
+//                Toast.makeText(MainActivity.this, text, Toast.LENGTH_SHORT).show();
+//            }
+//        });
     }
 
     private void initDatas() {

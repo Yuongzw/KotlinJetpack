@@ -3,4 +3,20 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+    <color name="aqua">#02D1AC</color>
+    <color name="yellow">#FFEB3B</color>
+    <color name="orange">#FF9800</color>
+    <color name="blue">#03A9F4</color>
+    <color name="green">#36F10C</color>
+    <color name="red">#E91E63</color>
+
+    <array name="splash_circle_colors">
+        <item>@color/aqua</item>
+        <item>@color/yellow</item>
+        <item>@color/orange</item>
+        <item>@color/blue</item>
+        <item>@color/green</item>
+        <item>@color/red</item>
+    </array>
 </resources>
