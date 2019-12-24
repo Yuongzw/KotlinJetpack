@@ -9,10 +9,23 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:visibility="gone"
         android:src="@mipmap/timg"/>
 
     <com.xiangxue.alvin.flowlayout.SplashView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:visibility="gone"
         />
+
+    <com.xiangxue.alvin.flowlayout.DragBubbleView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:bubble_text="12"
+        app:bubble_color="#ff0000"
+        app:bubble_radius="12dp"
+        app:bubble_textColor="#ffffff"
+        app:bubble_textSize="12sp"
+        />
+
 </FrameLayout>
