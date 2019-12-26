@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <attr name="a_in" format="float"></attr>
+    <attr name="a_out" format="float"></attr>
+    <attr name="x_in" format="float"></attr>
+    <attr name="x_out" format="float"></attr>
+    <attr name="y_in" format="float"></attr>
+    <attr name="y_out" format="float"></attr>
+
     <declare-styleable name="DragBubbleView">
         <attr name="bubble_radius" format="dimension"/>
         <attr name="bubble_color" format="color"/>

@@ -2,7 +2,7 @@ package com.xiangxue.alvin.flowlayout;
 
 
 import android.os.Bundle;
-import android.widget.Toast;
+import android.view.MotionEvent;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -28,6 +28,11 @@ public class MainActivity extends AppCompatActivity {
 //                Toast.makeText(MainActivity.this, text, Toast.LENGTH_SHORT).show();
 //            }
 //        });
+    }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        return super.dispatchTouchEvent(ev);
     }
 
     private void initDatas() {
