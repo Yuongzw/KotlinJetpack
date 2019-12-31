@@ -20,4 +20,13 @@
         <attr name="civ_border_overlay" format="boolean" />
         <attr name="civ_fill_color" format="color" />
     </declare-styleable>
+
+    <declare-styleable name="MyPercentLayout">
+        <attr name="widthPercent" format="float"/>
+        <attr name="heightPercent" format="float"/>
+        <attr name="marginLeftPercent" format="float"/>
+        <attr name="marginRightPercent" format="float"/>
+        <attr name="marginTopPercent" format="float"/>
+        <attr name="marginBottomPercent" format="float"/>
+    </declare-styleable>
 </resources>

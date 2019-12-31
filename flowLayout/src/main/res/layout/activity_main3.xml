@@ -73,4 +73,41 @@
         android:layout_margin="10dp"
         app:layout_behavior="com.xiangxue.alvin.flowlayout.ScaleBehavior"/>
 
+    <com.xiangxue.alvin.flowlayout.MyPercentLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="宽：50%，高：70%"
+            android:padding="5px"
+            android:background="#FF0000"
+            app:widthPercent="0.5"
+            app:heightPercent="0.7"
+            app:marginLeftPercent="0.3"
+            android:visibility="gone"
+            />
+
+        <TextView
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:background="#FF5722"
+            android:text="第一个"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:background="#00C4FF"
+            android:text="第二个"
+            android:gravity="center"
+            android:layout_alignParentEnd="true"/>
+
+    </com.xiangxue.alvin.flowlayout.MyPercentLayout>
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
+

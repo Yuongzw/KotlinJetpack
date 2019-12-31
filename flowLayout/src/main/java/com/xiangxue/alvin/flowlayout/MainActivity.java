@@ -1,7 +1,10 @@
 package com.xiangxue.alvin.flowlayout;
 
 
+import android.content.Context;
 import android.os.Bundle;
+import android.telephony.TelephonyManager;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.RelativeLayout;
@@ -32,7 +35,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main3);
+        Density.setDensity(getApplication(), this);
+        setContentView(R.layout.activity_main4);
 //        setContentView(new SplitView(this));
 //        flowLayout = findViewById(R.id.flowLayout);
 //        initDatas();
@@ -105,6 +109,17 @@ public class MainActivity extends AppCompatActivity {
                 return R.drawable.avatar4;
         }
         return 0;
+    }
+
+    /**
+     * 获取手机网络类型
+     *
+     * @see TelephonyManager ;
+     */
+    public int getNetWorkType(Context context) {
+        TelephonyManager tm = (TelephonyManager) context
+                .getSystemService(TELEPHONY_SERVICE);
+        return tm.getNetworkType();
     }
 
     @Override
