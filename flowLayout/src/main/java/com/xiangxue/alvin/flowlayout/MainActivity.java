@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Density.setDensity(getApplication(), this);
-        setContentView(R.layout.activity_main4);
+        setContentView(R.layout.activity_main5);
 //        setContentView(new SplitView(this));
 //        flowLayout = findViewById(R.id.flowLayout);
 //        initDatas();
@@ -47,43 +47,44 @@ public class MainActivity extends AppCompatActivity {
 //                Toast.makeText(MainActivity.this, text, Toast.LENGTH_SHORT).show();
 //            }
 //        });
-        recyclerView = findViewById(R.id.recyclerView);
-        rl_suspen = findViewById(R.id.rl_suspen);
-        iv_avatar = findViewById(R.id.iv_avatar);
-        tv_nickname = findViewById(R.id.tv_nickname);
-        final LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(layoutManager);
-        adapter = new FeedAdapter();
-        recyclerView.setAdapter(adapter);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
-            @Override
-            public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
-                super.onScrollStateChanged(recyclerView, newState);
-                //获取悬浮条的高度
-                susPendHeight = rl_suspen.getHeight();
-            }
 
-            @Override
-            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
-                super.onScrolled(recyclerView, dx, dy);
-                //对悬浮条的位置进行调整
-                //找到下一个 item
-                View view = layoutManager.findViewByPosition(mCurrentPosition + 1);
-                if (view != null) {
-                    if (view.getTop() <= susPendHeight) {
-                        //移动悬浮条
-                        rl_suspen.setY(-(susPendHeight - view.getTop()));
-                    } else {//保持原来的位置
-                        rl_suspen.setY(0);
-                    }
-                }
-                if (mCurrentPosition != layoutManager.findFirstVisibleItemPosition()) {
-                    mCurrentPosition = layoutManager.findFirstVisibleItemPosition();
-                    updateSuspensionBar();
-                }
-            }
-        });
+//        recyclerView = findViewById(R.id.recyclerView);
+//        rl_suspen = findViewById(R.id.rl_suspen);
+//        iv_avatar = findViewById(R.id.iv_avatar);
+//        tv_nickname = findViewById(R.id.tv_nickname);
+//        final LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+//        recyclerView.setLayoutManager(layoutManager);
+//        adapter = new FeedAdapter();
+//        recyclerView.setAdapter(adapter);
+//        recyclerView.setHasFixedSize(true);
+//        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+//            @Override
+//            public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
+//                super.onScrollStateChanged(recyclerView, newState);
+//                //获取悬浮条的高度
+//                susPendHeight = rl_suspen.getHeight();
+//            }
+//
+//            @Override
+//            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
+//                super.onScrolled(recyclerView, dx, dy);
+//                //对悬浮条的位置进行调整
+//                //找到下一个 item
+//                View view = layoutManager.findViewByPosition(mCurrentPosition + 1);
+//                if (view != null) {
+//                    if (view.getTop() <= susPendHeight) {
+//                        //移动悬浮条
+//                        rl_suspen.setY(-(susPendHeight - view.getTop()));
+//                    } else {//保持原来的位置
+//                        rl_suspen.setY(0);
+//                    }
+//                }
+//                if (mCurrentPosition != layoutManager.findFirstVisibleItemPosition()) {
+//                    mCurrentPosition = layoutManager.findFirstVisibleItemPosition();
+//                    updateSuspensionBar();
+//                }
+//            }
+//        });
 
     }
 
