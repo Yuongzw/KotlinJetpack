@@ -4,8 +4,8 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Path;
 import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
 import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.view.View;
@@ -69,24 +69,28 @@ public class BaseStationView extends View {
     protected void onDraw(Canvas canvas) {
         setLayerType(View.LAYER_TYPE_SOFTWARE, null);
         int saveLayer = canvas.saveLayer(0, 0, getWidth(), getHeight(), mPaint, Canvas.ALL_SAVE_FLAG);
-        canvas.drawColor(Color.BLACK);
+        setBackgroundColor(Color.GRAY);
         canvas.translate(getWidth() / 2 - mBigRadius - mBigRadius / 2, getHeight() / 2 - mBigRadius - mBigRadius / 2);
         RectF bigR = new RectF(0, 0, mBigRadius * 2, mBigRadius * 2);
         RectF smallR = new RectF(mBigRadius - mSmallRadius, mBigRadius - mSmallRadius, mBigRadius + mSmallRadius, mBigRadius + mSmallRadius);
-//        canvas.drawRect(bigR, mPaint);
-//        canvas.drawRect(smallR, mPaint);
 
         for (int i = 0; i < mAngle.size(); i++) {
             float startAngle = mAngle.get(i);
             mPaint.setColor(mColorSets[i % mColorSets.length]);
             canvas.drawArc(bigR, startAngle, 60, true, mPaint);
-//            mPaint.setColor(Color.RED);
+//            mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_OUT));
+//            canvas.drawArc(smallR, startAngle, 60, true, mPaint);
+//            mPaint.setXfermode(null);
         }
-        mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_OUT));
-//        mPaint.setColor(Color.TRANSPARENT);
-//        mPaint.setStyle(Paint.Style.STROKE);
-        canvas.drawCircle(smallR.centerX(), smallR.centerY(), mSmallRadius, mPaint);
-        mPaint.setXfermode(null);
+        Path path = new Path();
+        path.addCircle(smallR.centerX(), smallR.centerY(), mSmallRadius, Path.Direction.CW);
+        canvas.save();
+        canvas.clipPath(path);
+        canvas.drawColor(Color.TRANSPARENT, PorterDuff.Mode.CLEAR);
+        canvas.restore();
+//        mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_OUT));
+//        canvas.drawCircle(smallR.centerX(), smallR.centerY(), mSmallRadius, mPaint);
+//        mPaint.setXfermode(null);
 
 
         canvas.restoreToCount(saveLayer);
