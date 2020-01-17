@@ -2,6 +2,7 @@ package com.xiangxue.alvin.flowlayout;
 
 
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.telephony.TelephonyManager;
 import android.util.Log;
@@ -36,7 +37,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Density.setDensity(getApplication(), this);
-        setContentView(R.layout.activity_main5);
+//        setContentView(R.layout.activity_main5);
+        setContentView(new BaseStationView(this));
 //        setContentView(new SplitView(this));
 //        flowLayout = findViewById(R.id.flowLayout);
 //        initDatas();
